@@ -1,0 +1,609 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,600&family=Sora:wght@300;500;700&display=swap');
+
+
+/* =========================
+   BASIC RESET
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Sora', sans-serif;
+    color: #fff6ec;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+
+    position: relative;
+    overflow-x: hidden;
+
+    background:
+        linear-gradient(
+            160deg,
+            #2c1338 0%,
+            #4a1e4f 35%,
+            #7a2e5c 65%,
+            #c15b56 100%
+        );
+
+    background-size: 200% 200%;
+
+    animation: backgroundDrift 18s ease-in-out infinite;
+}
+
+
+/* =========================
+   BACKGROUND LIGHTS
+========================= */
+
+body::before,
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 380px;
+    height: 380px;
+
+    border-radius: 50%;
+
+    filter: blur(80px);
+
+    opacity: 0.45;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+body::before {
+    background: #ff8a65;
+
+    top: -120px;
+    left: -120px;
+
+    animation: floatA 14s ease-in-out infinite;
+}
+
+body::after {
+    background: #7fd8e0;
+
+    bottom: -120px;
+    right: -120px;
+
+    animation: floatB 16s ease-in-out infinite;
+}
+
+
+@keyframes backgroundDrift {
+
+    0%,
+    100% {
+        background-position: 0% 30%;
+    }
+
+    50% {
+        background-position: 100% 70%;
+    }
+}
+
+
+@keyframes floatA {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(60px, 40px);
+    }
+}
+
+
+@keyframes floatB {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-50px, -30px);
+    }
+}
+
+
+/* =========================
+   MAIN PAGE
+========================= */
+
+.page {
+    width: 100%;
+    max-width: 900px;
+
+    position: relative;
+
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.birthday-heading {
+    margin-bottom: 28px;
+}
+
+.small-text {
+    font-size: 0.8rem;
+
+    font-weight: 500;
+
+    letter-spacing: 0.15em;
+
+    text-transform: uppercase;
+
+    opacity: 0.65;
+
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-family: 'Fraunces', serif;
+
+    font-size: clamp(
+        2.5rem,
+        7vw,
+        4.8rem
+    );
+
+    line-height: 1;
+
+    font-weight: 600;
+
+    margin: 0;
+
+    text-shadow:
+        0 5px 30px rgba(0, 0, 0, 0.35);
+}
+
+h1 span {
+    font-style: italic;
+
+    color: #f4c968;
+}
+
+.birthday-heading p {
+    margin: 15px 0 0;
+
+    font-size: 0.95rem;
+
+    font-weight: 300;
+
+    opacity: 0.7;
+}
+
+
+/* =========================
+   VIDEO
+========================= */
+
+.video-frame {
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    padding: 10px;
+
+    position: relative;
+
+    border-radius: 24px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(
+        255,
+        255,
+        255,
+        0.2
+    );
+
+    backdrop-filter: blur(10px);
+
+    -webkit-backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.45),
+        inset 0 0 0 1px rgba(
+            255,
+            255,
+            255,
+            0.04
+        );
+
+    overflow: hidden;
+}
+
+
+.video-frame video {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    border: none;
+
+    border-radius: 16px;
+
+    background: #000;
+
+    object-fit: contain;
+}
+
+
+/* =========================
+   BOTTOM MESSAGE
+========================= */
+
+.bottom-text {
+    margin-top: 22px;
+
+    font-size: 0.75rem;
+
+    font-weight: 300;
+
+    opacity: 0.45;
+
+    letter-spacing: 0.03em;
+}
+
+
+/* =========================
+   BALLOONS
+========================= */
+
+.balloon {
+    position: fixed;
+
+    bottom: -120px;
+
+    width: 45px;
+    height: 58px;
+
+    border-radius:
+        50% 50% 50% 50%
+        / 60% 60% 40% 40%;
+
+    opacity: 0.75;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    animation:
+        balloonRise
+        linear infinite;
+}
+
+
+/* balloon strings */
+
+.balloon::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 57px;
+
+    width: 1px;
+    height: 55px;
+
+    background: rgba(
+        255,
+        255,
+        255,
+        0.35
+    );
+}
+
+
+/* balloon knot */
+
+.balloon::before {
+    content: "";
+
+    position: absolute;
+
+    bottom: -5px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 8px;
+    height: 8px;
+
+    background: inherit;
+
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        50% 100%
+    );
+}
+
+
+.balloon-1 {
+    left: 7%;
+
+    background: #ff6f9c;
+
+    animation-duration: 14s;
+}
+
+.balloon-2 {
+    left: 23%;
+
+    background: #f4c968;
+
+    animation-duration: 17s;
+
+    animation-delay: 3s;
+}
+
+.balloon-3 {
+    right: 20%;
+
+    background: #7fd8e0;
+
+    animation-duration: 15s;
+
+    animation-delay: 5s;
+}
+
+.balloon-4 {
+    right: 7%;
+
+    background: #ff8a65;
+
+    animation-duration: 19s;
+
+    animation-delay: 1s;
+}
+
+
+@keyframes balloonRise {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(-5deg);
+    }
+
+    50% {
+        transform:
+            translateY(-60vh)
+            rotate(5deg);
+    }
+
+    100% {
+        transform:
+            translateY(-130vh)
+            rotate(-5deg);
+    }
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+.confetti {
+    position: fixed;
+
+    top: -20px;
+
+    width: 7px;
+    height: 13px;
+
+    border-radius: 2px;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    animation:
+        confettiFall
+        linear infinite;
+}
+
+
+/* individual pieces */
+
+.confetti-1 {
+    left: 5%;
+    background: #f4c968;
+    animation-duration: 7s;
+}
+
+.confetti-2 {
+    left: 13%;
+    background: #ff6f9c;
+    animation-duration: 9s;
+    animation-delay: 1s;
+}
+
+.confetti-3 {
+    left: 22%;
+    background: #7fd8e0;
+    animation-duration: 8s;
+    animation-delay: 2s;
+}
+
+.confetti-4 {
+    left: 31%;
+    background: #ff8a65;
+    animation-duration: 10s;
+    animation-delay: 0.5s;
+}
+
+.confetti-5 {
+    left: 42%;
+    background: #f4c968;
+    animation-duration: 7.5s;
+    animation-delay: 3s;
+}
+
+.confetti-6 {
+    left: 51%;
+    background: #ff6f9c;
+    animation-duration: 11s;
+    animation-delay: 1.5s;
+}
+
+.confetti-7 {
+    left: 61%;
+    background: #7fd8e0;
+    animation-duration: 8.5s;
+    animation-delay: 4s;
+}
+
+.confetti-8 {
+    left: 70%;
+    background: #ff8a65;
+    animation-duration: 9.5s;
+    animation-delay: 2s;
+}
+
+.confetti-9 {
+    left: 78%;
+    background: #f4c968;
+    animation-duration: 7s;
+    animation-delay: 0.2s;
+}
+
+.confetti-10 {
+    left: 86%;
+    background: #ff6f9c;
+    animation-duration: 10s;
+    animation-delay: 3.5s;
+}
+
+.confetti-11 {
+    left: 93%;
+    background: #7fd8e0;
+    animation-duration: 8s;
+    animation-delay: 1s;
+}
+
+.confetti-12 {
+    left: 97%;
+    background: #ff8a65;
+    animation-duration: 12s;
+    animation-delay: 4s;
+}
+
+
+@keyframes confettiFall {
+
+    0% {
+        transform:
+            translateY(-30px)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    50% {
+        transform:
+            translateY(50vh)
+            translateX(20px)
+            rotate(180deg);
+    }
+
+    100% {
+        transform:
+            translateY(110vh)
+            translateX(-30px)
+            rotate(360deg);
+
+        opacity: 0.2;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 25px 12px;
+    }
+
+    .birthday-heading {
+        margin-bottom: 20px;
+    }
+
+    .small-text {
+        font-size: 0.65rem;
+    }
+
+    h1 {
+        font-size: 2.7rem;
+    }
+
+    .birthday-heading p {
+        font-size: 0.8rem;
+    }
+
+    .video-frame {
+        padding: 6px;
+
+        border-radius: 18px;
+    }
+
+    .video-frame video {
+        border-radius: 12px;
+    }
+
+    .bottom-text {
+        font-size: 0.65rem;
+    }
+
+    .balloon {
+        width: 32px;
+        height: 43px;
+    }
+}
