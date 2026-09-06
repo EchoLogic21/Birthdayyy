@@ -191,13 +191,17 @@ h1 {
 h1 span {
     font-style: italic;
 
-    color: #f4c968;
+    color: #e0a530;
+
+    text-shadow:
+        0 0 12px rgba(244, 201, 104, 0.55),
+        0 0 28px rgba(244, 201, 104, 0.3);
 }
 
 .birthday-heading p {
     margin: 15px 0 0;
 
-    font-size: 0.95rem;
+    font-size: 1.15rem;
 
     font-weight: 300;
 
