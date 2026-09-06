@@ -19,7 +19,7 @@ body {
 
 body {
     font-family: 'Sora', sans-serif;
-    color: #fff6ec;
+    color: #33324a;
 
     min-height: 100vh;
 
@@ -35,10 +35,10 @@ body {
     background:
         linear-gradient(
             160deg,
-            #2c1338 0%,
-            #4a1e4f 35%,
-            #7a2e5c 65%,
-            #c15b56 100%
+            #fdfbf7 0%,
+            #eaf4fb 30%,
+            #cfe8f5 65%,
+            #b8dcef 100%
         );
 
     background-size: 200% 200%;
@@ -72,7 +72,7 @@ body::after {
 }
 
 body::before {
-    background: #ff8a65;
+    background: #ffd9c2;
 
     top: -120px;
     left: -120px;
@@ -81,7 +81,7 @@ body::before {
 }
 
 body::after {
-    background: #7fd8e0;
+    background: #cdeaff;
 
     bottom: -120px;
     right: -120px;
@@ -185,7 +185,7 @@ h1 {
     margin: 0;
 
     text-shadow:
-        0 5px 30px rgba(0, 0, 0, 0.35);
+        0 4px 18px rgba(0, 0, 0, 0.1);
 }
 
 h1 span {
@@ -225,13 +225,13 @@ h1 span {
 
     border-radius: 24px;
 
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.35);
 
     border: 1px solid rgba(
         255,
         255,
         255,
-        0.25
+        0.5
     );
 
     backdrop-filter: blur(10px);
@@ -239,12 +239,12 @@ h1 span {
     -webkit-backdrop-filter: blur(10px);
 
     box-shadow:
-        0 30px 80px rgba(0, 0, 0, 0.45),
+        0 30px 80px rgba(80, 110, 140, 0.25),
         inset 0 0 0 1px rgba(
             255,
             255,
             255,
-            0.04
+            0.5
         );
 
     overflow: hidden;
@@ -277,7 +277,7 @@ h1 span {
 
     font-weight: 300;
 
-    opacity: 0.45;
+    opacity: 0.5;
 
     letter-spacing: 0.03em;
 }
@@ -305,10 +305,6 @@ h1 span {
 
     pointer-events: none;
 
-    /*
-       Gives each balloon depth instead of the old
-       flat single-color look.
-    */
     background:
         radial-gradient(
             circle at 30% 23%,
@@ -333,7 +329,7 @@ h1 span {
     box-shadow:
         inset -9px -12px 16px rgba(0, 0, 0, 0.18),
         inset 8px 7px 14px rgba(255, 255, 255, 0.18),
-        0 8px 18px rgba(0, 0, 0, 0.18);
+        0 8px 18px rgba(0, 0, 0, 0.12);
 
     animation:
         balloonRise
@@ -357,14 +353,14 @@ h1 span {
     background:
         linear-gradient(
             to bottom,
-            rgba(255, 255, 255, 0.42),
-            rgba(255, 255, 255, 0.08)
+            rgba(90, 90, 110, 0.35),
+            rgba(90, 90, 110, 0.08)
         );
 
     transform: translateX(-50%);
 
     box-shadow:
-        0 0 3px rgba(255, 255, 255, 0.12);
+        0 0 3px rgba(90, 90, 110, 0.12);
 }
 
 
@@ -397,7 +393,7 @@ h1 span {
 /* balloon strings */
 
 .balloon {
-    --string-color: rgba(255, 255, 255, 0.35);
+    --string-color: rgba(90, 90, 110, 0.35);
 }
 
 .balloon-1 {
@@ -460,7 +456,7 @@ h1 span {
 .balloon-2,
 .balloon-3,
 .balloon-4 {
-    --string-shadow: rgba(255,255,255,.28);
+    --string-shadow: rgba(90,90,110,.28);
 }
 
 @keyframes balloonRise {
