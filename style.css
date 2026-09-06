@@ -662,3 +662,31 @@ h1 span {
         height: 48px;
     }
 }
+/* =========================
+   PHOTO
+========================= */
+
+.photo-frame {
+    margin-top: 28px;
+    max-width: 380px;
+    width: 100%;
+
+    padding: 14px;
+
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 16px;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 20px 50px rgba(80, 110, 140, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.photo-frame img {
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+}
